@@ -12,7 +12,7 @@ public abstract class Mammal implements Animal {
     private final Integer id;
     private ArrayList<Food> eatenMeals;
     private String name;
-    private Date birthDate;
+    public Date birthDate;
 
     public Mammal(String name, Date birthDate, Integer id) {
         this.name = name;
@@ -48,6 +48,7 @@ public abstract class Mammal implements Animal {
 
     @Override
     public Integer getId() {
+
         return id;
     }
 }

@@ -1,8 +1,10 @@
 package rocks.zipcodewilmington;
 
+import javafx.beans.binding.When;
 import org.junit.Assert;
 import org.junit.Test;
 import rocks.zipcodewilmington.animals.Cat;
+import rocks.zipcodewilmington.animals.Dog;
 
 import java.util.Date;
 
@@ -18,7 +20,7 @@ public class CatTest {
     // TODO - Create test to check Animal inheritance; google search `java instanceof keyword`
     // TODO - Create test to check Mammal inheritance; google search `java instanceof keyword`
 
-
+    Cat cat = new Cat("",null,0);
     @Test
     public void constructorTest() {
         // Given (cat data)
@@ -40,4 +42,94 @@ public class CatTest {
         Assert.assertEquals(givenId, retrievedId);
     }
 
-}
+    @Test
+    public void testSetName() {
+        // Given
+
+        Cat cat = new Cat(null, null, 0);
+        String expected = "Butters";
+
+
+
+        //When
+        cat.setName(expected);
+
+        //Then
+        String actual = cat.getName();
+        Assert.assertEquals(expected, actual);
+    }
+
+
+        @Test
+         public void speakTest() {
+
+        //Given
+        Cat cat = new Cat(null, null, 0);
+        String expected = "Meow";
+
+        //When
+        cat.speak();
+
+        //Then
+        String actual = cat.speak();
+        Assert.assertEquals(expected,actual);
+
+        }
+
+
+    @Test
+
+    public void setBirthDateTest() {
+
+        //Given
+        Cat cat = new Cat(null, null, 0);
+        Date expectedDate = new Date();
+
+        //When
+        cat.setBirthDate(expectedDate);
+
+        //Then
+        Date actualDate = cat.getBirthDate();
+        Assert.assertEquals(expectedDate, actualDate);
+    }
+
+     @Test
+
+        public void eatTest(){
+
+        //Given
+        Food food = new Food();
+        Cat c = new Cat("",new Date(),0);
+
+
+        int expected = 1;
+
+        //When
+        cat.eat(food);
+        int actual = cat.getNumberOfMealsEaten();
+
+        //Then
+
+         Assert.assertEquals(expected, actual);
+
+
+        }
+
+
+
+
+
+
+
+
+
+    }
+
+
+
+
+
+
+
+
+
